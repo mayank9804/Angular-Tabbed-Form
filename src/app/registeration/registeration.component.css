@@ -1,0 +1,105 @@
+
+.navigation{
+    position: fixed;
+    background-color: #F4F4F4;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    width: 100%;
+    z-index: 100;
+}
+.progress{
+    position: fixed;
+    margin-top:43px;
+    width: 100%;
+    border-radius: 0px;
+    height: 10px;
+    z-index: 100;
+}
+.progress-bar{
+    background-color:#2291A2;
+    border-radius: 0px;
+}
+.navigation li{
+    padding: 10px;
+    background-color:#F4F4F4 ;
+    border: 1px solid #79C5C4;
+    transition: 0.2s ease-in-out;
+    flex:0 0 200px;
+}
+
+.navigation li a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.navigation li.active{
+    background-color: #79C5C4;
+    transition: 0.2s ease-in-out;
+}
+.navigation li i{
+    color: #79C5C4;
+}
+.navigation li.active i{
+    color: #D4D2D2;
+}
+
+.navigation li.active a{
+    text-decoration: none;
+    color: white;
+}
+button{
+    background-color: #79C5C4;
+    padding: 10px;
+    color: #F4F4F4;
+    text-transform: uppercase;
+    border:none;
+    display: block;
+    width: 150px;
+    margin: 50px auto;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+button:disabled,button[disabled]{
+    cursor: not-allowed;
+}
+.block{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 200;
+    cursor: not-allowed;
+}
+@media(max-width:700px){
+    .navigation{
+        display: block;
+    }
+    .progress{
+        margin-top: 75px;
+    }
+}
+
+.loader-spinner {
+    position: fixed;
+    width: 100%;
+    max-width: 120px;
+    left: 50%;
+    top: 50%;
+    transform: translate( -50%, -50% ); /* center */
+    -webkit-animation: spinLoader 600ms steps(12, end) infinite;
+            animation: spinLoader 600ms steps(12, end) infinite;
+            z-index: 1100;
+  }
+  
+  @-webkit-keyframes spinLoader {
+    from { transform: translate( -50%, -50% ) rotate(0turn); }
+    to { transform: translate( -50%, -50% ) rotate(1turn); }
+  }
+  
+  @keyframes spinLoader {
+    from { transform: translate( -50%, -50% ) rotate(0turn); }
+    to { transform: translate( -50%, -50% ) rotate(1turn); }
+  }
+  

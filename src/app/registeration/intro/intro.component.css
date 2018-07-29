@@ -1,0 +1,97 @@
+
+.intro-form{
+    max-width: 50%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+}
+.intro-form .name-dp{
+    display: flex;   
+    position: relative;
+}
+.intro-form .name-dp{
+    z-index:10;
+}
+.intro-form .name-dp #dp{
+    display: none;
+}
+.intro-form .name-dp #dp +label{
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0;
+    cursor: pointer;
+    border-radius: 100%;
+    background: transparent;
+    font-weight: normal;
+    z-index:5;
+}
+.intro-form img{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    font-size: 70px;
+    top:5px;
+    left:6px;
+    z-index:0;
+    cursor: pointer;
+}
+.intro-form .name-dp .name-container{
+    flex:1;
+    margin-left: 5%;
+}
+.intro-form .name-dp .userprofilepic{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    font-size: 70px;
+    top:5px;
+    left:6px;
+    z-index:0;
+}
+.intro-form input{
+    background-color: #F4F4F4;
+    border: 1px solid #F4F4F4;
+    height: 40px;
+    width: 100%;
+    padding: 20px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.intro-form label{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.seperator{
+    margin-top: 5%;
+}
+.intro-form textarea{
+    background-color: #F4F4F4;
+    border: 1px solid #F4F4F4;
+    padding: 20px;
+    font-family: 'Roboto Condensed', sans-serif;
+    resize: none;
+}
+.intro-form .help-block{
+    font-family: 'Roboto Condensed', sans-serif;
+    color: red;
+}
+button{
+    background-color: #79C5C4;
+    padding: 10px;
+    color: #F4F4F4;
+    text-transform: uppercase;
+    border:none;
+    display: block;
+    width: 150px;
+    margin: 50px auto;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+button:disabled,button[disabled]{
+    cursor: not-allowed;
+}
+
+@media(max-width:700px){
+    .intro-form{
+        margin-top:90px;
+        max-width: 95%;
+    }
+}

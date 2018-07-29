@@ -1,0 +1,22 @@
+<ul class="navigation">
+    <li class="intro">
+        <i class="fas fa-check" *ngIf="_registerService.isValidFormTab?.intro"></i> &nbsp;
+        <a [routerLink]="['/register/introduction']">Introduction</a>
+    </li>
+    <li class="personal-info">
+        <i class="fas fa-check" *ngIf="_registerService.isValidFormTab?.personal_info"></i> &nbsp;
+        <a [routerLink]="['/register/personal-info']">Personal Information</a>
+    </li>
+
+</ul>
+
+<div class="progress">
+    <div class="progress-bar" role="progressbar"  aria-valuemin="0" aria-valuemax="100"  [style.width]="progressBarWidth+'%'">
+        <span class="sr-only">{{progressBarWidth}}% Complete</span>
+    </div>
+</div>
+<router-outlet style="margin:1px;"></router-outlet>
+<div class="block" *ngIf='_registerService.loading'>
+
+</div>
+<img class="loader-spinner" *ngIf='_registerService.loading' src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/loader-spinner.png" />

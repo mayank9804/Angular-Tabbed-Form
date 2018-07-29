@@ -1,0 +1,77 @@
+<form [formGroup]="personalInfoForm" class="personalInformation">
+  <label for="">State</label>
+  <input formControlName="state" type="text">
+  <span class="help-block" *ngIf="stateMessage">{{stateMessage}}</span>
+  <span class="help-block" *ngIf="requiredMessage && personalInfoForm.controls.state.invalid && !stateMessage">{{requiredMessage}}</span>
+  <hr>
+  <label for="">Age</label>
+  <input formControlName="age" type="number">
+  <span class="help-block" *ngIf="ageMessage">{{ageMessage}}</span>
+  <span class="help-block" *ngIf="requiredMessage && personalInfoForm.controls.age.invalid && !ageMessage">{{requiredMessage}}</span>
+  <hr>
+  <label for="">Ethnicity</label>
+  <div class="optionsBox" style="position: relative;">
+    <label class="checkboxContainer">Hispanic or Latino
+      <input type="radio" formControlName="ethnicity" name="ethnicity" value="Hispanic or Latino">
+      <span class="checkmark"></span>
+    </label>
+    <label class="checkboxContainer">Non-Hispanic or Non-Latino
+      <input type="radio" formControlName="ethnicity" name="ethnicity" value="Non-Hispanic or Non-Latino">
+      <span class="checkmark"></span>
+    </label>
+  </div>
+  <span class="help-block" *ngIf="requiredMessage && personalInfoForm.controls.ethnicity.invalid">{{requiredMessage}}</span>
+  <hr>
+  <label for="">Race</label>
+  <div class="optionsBox" style="position: relative;">
+    <label class="checkboxContainer">American Indian
+      <input type="radio" formControlName="race" name="race"
+      value="American Indian">
+      <span class="checkmark"></span>
+    </label>
+    <label class="checkboxContainer">Asian
+      <input type="radio" formControlName="race" name="race" value="Asian">
+      <span class="checkmark"></span>
+    </label>
+    <label class="checkboxContainer">Native Hawaiian or Other Pacific Islander
+      <input type="radio" formControlName="race" name="race" value="Native Hawaiian or Other Pacific Islander">
+      <span class="checkmark"></span>
+    </label>
+    <label class="checkboxContainer">Black or African American
+      <input type="radio" formControlName="race" name="race" value="Black or African American">
+      <span class="checkmark"></span>
+    </label>
+    <label class="checkboxContainer">White
+      <input type="radio" formControlName="race" name="race" value="White">
+      <span class="checkmark"></span>
+    </label>
+  </div>
+  <span class="help-block" *ngIf="requiredMessage && personalInfoForm.controls.race.invalid">{{requiredMessage}}</span>
+  <hr>
+  <label for="">Sex</label>
+  <div class="optionsBox" style="position: relative;">
+    <label class="checkboxContainer">Male
+      <input type="radio" formControlName="sex" name="sex" value="Male">
+      <span class="checkmark"></span>
+    </label>
+    <label class="checkboxContainer">Female
+      <input type="radio" formControlName="sex" name="sex" value="Female">
+      <span class="checkmark"></span>
+    </label>
+  </div>
+  <span class="help-block" *ngIf="requiredMessage && personalInfoForm.controls.sex.invalid">{{requiredMessage}}</span>
+  <hr>
+  <label for="">Height</label>
+  <input type="text" formControlName="height" name="height" placeholder="In inches">
+  <span class="help-block" *ngIf="heightMessage">{{heightMessage}}</span>
+  <span class="help-block" *ngIf="requiredMessage && personalInfoForm.controls.height.invalid && !heightMessage">{{requiredMessage}}</span>
+  <hr>
+  <label for="">Weight</label>
+  <input type="text" formControlName="weight" name="weight" placeholder="In pounds">
+  <span class="help-block" *ngIf="weightMessage">{{weightMessage}}</span>
+  <span class="help-block" *ngIf="requiredMessage && personalInfoForm.controls.weight.invalid && !weightMessage">{{requiredMessage}}</span>
+
+</form>
+
+<button type="button" [disabled]="personalInfoForm.invalid || !_registerService.isValidFormTab['intro']"  (click)="proceed(personalInfoForm.value)">Submit</button>
+

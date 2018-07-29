@@ -1,0 +1,22 @@
+<form [formGroup]="introForm" class="intro-form">
+  <div class="name-dp">
+    <input type="file" (change)='onFileChange($event)' formControlName="dp" name="dp" id="dp" accept="image/*">
+    <label for="dp"></label>
+    <img *ngIf='url' [src]="url" alt="Profile Pic">
+    <i class="far fa-user-circle userprofilepic" *ngIf='!url'></i>
+    <div class="name-container">
+      <label for="name">Your Name</label>
+      <br>
+      <input type="text" formControlName="name" name="name" id="name">
+      <span class="help-block" *ngIf="nameMessage">{{nameMessage}}</span>
+      <span class="help-block" *ngIf="requiredMessage && introForm.controls.name.invalid">{{requiredMessage}}</span>
+    </div>
+  </div>
+  <div class="seperator"></div>
+  <label for="description">Write a short description about yourself</label>
+  <textarea formControlName="description" name="description" id="description" cols="30" rows="10" placeholder="May be you can write about your goals and motivation"></textarea>
+  <span class="help-block" *ngIf="descriptionMessage">{{descriptionMessage}}</span>
+
+</form>
+<button type="button" [disabled]='introForm.invalid' (click)="proceed(introForm.value)">Proceed</button>
+

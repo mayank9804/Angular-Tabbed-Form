@@ -1,0 +1,34 @@
+<div class="users">
+    <h2 *ngIf='users?.length==0'>No users exists</h2>
+
+    <div class="row" *ngIf='users?.length>0'>
+        <div *ngFor='let user of users'>
+            <div class="col-xs-12" class="user">
+                <div class="dp">
+                    <img *ngIf='user.dp' class="displayPicture" src="data:{{user?.dp.contentType}};base64,{{user?.dp.data}}" alt="DP">
+                    <img *ngIf='!user.dp' class="displayPicture" src="../../assets/img/imageNotAvailable.jpg" alt="Not available">
+                </div>
+                <div class="details">
+                    <h2><strong>Name:</strong> {{user?.name}}</h2>
+                    <h2 *ngIf='user?.description.length>0'><strong>Description:</strong> {{user?.description}}</h2>
+                    <div class="minorDetails">
+                        <span><strong>State:</strong> {{user?.state}}</span>
+                        <span><strong>Age:</strong> {{user?.age}}</span>
+                        <span><strong>Ethnicity:</strong> {{user?.ethnicity}}</span>
+                    </div>
+                    <div class="minorDetails">
+                        <span><strong>Race:</strong> {{user?.race}}</span>
+                        <span><strong>Sex:</strong> {{user?.sex}}</span>
+                    </div>
+                    <div class="minorDetails">
+                        <span><strong>Height:</strong> {{user?.height}}</span>
+                        <span><strong>Weight:</strong> {{user?.weight}}</span>
+                    </div>
+                </div>
+
+            </div>
+            <hr class="seperator">
+        </div>
+    </div>
+    <button type="button" (click)='register();'>Register</button>
+</div>

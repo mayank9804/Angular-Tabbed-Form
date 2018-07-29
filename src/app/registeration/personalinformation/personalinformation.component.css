@@ -1,0 +1,102 @@
+*{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.personalInformation label{
+    font-size: 16px;
+}
+.personalInformation{
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    margin: 50px auto;
+}
+.personalInformation .help-block{
+    color: red;
+    font-size: 14px;
+}
+.personalInformation hr{
+    width: 100%;
+    color: #79C5C4;
+}
+.personalInformation input[type="text"],input[type="number"]{
+    background-color: #F4F4F4;
+    border: none;
+    height: 40px;
+    width: 50%;
+    border: 2px- solid #f2f2f2;
+    padding: 20px;
+}
+.optionsBox{
+    display: flex;
+    align-items: flex-start;
+    justify-content:flex-start;
+}
+.checkboxContainer {
+    position: relative;
+    padding-left: 35px;
+    font-weight: normal;
+    font-size: 14px;
+    flex: 0 0 200px;
+    cursor: pointer;
+}
+
+.checkboxContainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkboxContainer .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #F4F4F4;
+    border-radius: 50%;
+    border:1px solid #79C5C4;
+    transition: 0.2s ease-out;
+}
+
+.checkboxContainer:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.checkboxContainer input:checked ~ .checkmark {
+    background-color: #79C5C4;
+}
+
+::placeholder{
+    padding-left: 80%;
+}
+
+button{
+    background-color: #79C5C4;
+    padding: 10px;
+    color: #F4F4F4;
+    text-transform: uppercase;
+    border:none;
+    display: block;
+    width: 150px;
+    margin: 50px auto;
+}
+button:disabled,button[disabled]{
+    cursor: not-allowed;
+}
+
+@media(max-width:700px){
+    .personalInformation{
+        max-width: 95%;
+        margin-top: 90px;
+    }
+    .personalInformation input[type="text"],input[type="number"]{
+        width: 100%;
+    }
+    .optionsBox{
+        display: block;
+    }
+    .checkboxContainer{
+        display: block;
+        margin-top: 20px;
+    }
+}
